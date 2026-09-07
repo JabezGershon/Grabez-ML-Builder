@@ -1,0 +1,220 @@
+.code-generator-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  backdrop-filter: blur(4px);
+}
+
+.code-generator-modal {
+  background: #1e1e1e;
+  border-radius: 12px;
+  width: 90vw;
+  height: 85vh;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid #333;
+  overflow: hidden;
+}
+
+.code-generator-header {
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.code-generator-header h2 {
+  color: #ffffff;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.code-generator-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.code-generator-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.copy-btn {
+  background-color: #4299e1;
+  color: white;
+}
+
+.copy-btn:hover {
+  background-color: #3182ce;
+  transform: translateY(-1px);
+}
+
+.download-btn {
+  background-color: #48bb78;
+  color: white;
+}
+
+.download-btn:hover {
+  background-color: #38a169;
+  transform: translateY(-1px);
+}
+
+.close-btn {
+  background-color: #e53e3e;
+  color: white;
+  font-size: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  background-color: #c53030;
+  transform: rotate(90deg);
+}
+
+.code-generator-content {
+  flex: 1;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+.code-preview {
+  height: 100%;
+  margin: 0;
+  padding: 20px;
+  overflow: auto;
+  font-family: 'Fira Code', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  background: #1a1a1a;
+  color: #d4d4d4;
+  border: none;
+}
+
+.code-preview code {
+  font-family: inherit;
+  color: inherit;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  white-space: pre;
+}
+
+/* Python syntax highlighting - basic styling */
+.code-preview {
+  color: #d4d4d4;
+}
+
+.code-generator-footer {
+  background: #2d3748;
+  padding: 16px 20px;
+  border-top: 1px solid #333;
+}
+
+.code-generator-footer p {
+  color: #cbd5e0;
+  margin: 0 0 8px 0;
+  font-size: 14px;
+}
+
+.install-command {
+  background: #1a1a1a;
+  color: #48bb78;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Monaco', 'Menlo', monospace;
+  font-size: 13px;
+  border: 1px solid #333;
+  display: inline-block;
+}
+
+/* Scrollbar styling */
+.code-preview::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.code-preview::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.code-preview::-webkit-scrollbar-thumb {
+  background: #4a5568;
+  border-radius: 4px;
+}
+
+.code-preview::-webkit-scrollbar-thumb:hover {
+  background: #718096;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .code-generator-modal {
+    width: 95vw;
+    height: 90vh;
+  }
+  
+  .code-generator-header {
+    padding: 16px;
+  }
+  
+  .code-generator-header h2 {
+    font-size: 20px;
+  }
+  
+  .code-generator-actions {
+    gap: 8px;
+  }
+  
+  .code-generator-actions button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .code-preview {
+    padding: 16px;
+    font-size: 12px;
+  }
+}
+
+/* Animation */
+.code-generator-modal {
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
